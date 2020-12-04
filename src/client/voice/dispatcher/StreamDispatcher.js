@@ -30,8 +30,8 @@ const nonce = Buffer.alloc(24);
  * @extends {WritableStream}
  */
 class StreamDispatcher extends Writable {
-  constructor(player, { seek = 0, volume = 1, fec, plp, bitrate = 96, highWaterMark = 12 } = {}, streams) {
-    const streamOptions = { seek, volume, fec, plp, bitrate, highWaterMark };
+  constructor(player, { seek = 0, volume = 1, fec, plp, bitrate = 96, highWaterMark = 12, encoderArgs } = {}, streams) {
+    const streamOptions = { seek, volume, fec, plp, bitrate, highWaterMark, encoderArgs };
     super(streamOptions);
     /**
      * The Audio Player that controls this dispatcher
